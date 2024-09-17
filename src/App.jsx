@@ -1,11 +1,17 @@
-import { useState } from 'react'
 import './App.css'
+import ArticlesContainer from "./components/ArticlesContainer"
+import Header from './components/Header'
+import Navigation from './components/Navigation'
 
 function App() {
 
   return (
     <>
-    <h1>It Works!</h1>
+    <Header/>
+    <main>
+    <ArticlesContainer/>
+    </main>
+    <Navigation/>
     </>
   )
 }
