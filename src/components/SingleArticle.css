@@ -1,0 +1,46 @@
+.article-stats{
+    display:flex;
+    flex-direction: row;
+}
+
+.article-stats span {
+    background-color: rgb(235, 229, 229);
+    margin-right: 10px;
+    height:auto;
+    padding:5px;
+    min-width: 80px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.article-votes{
+    text-align: center;
+}
+
+.article-comments-count{
+    margin-left:5px;
+}
+
+.article-header{
+    display:flex;
+    flex-direction: row;
+}
+
+ span {
+    margin-right: 10px;
+    height:auto;
+    min-width: 80px;
+    font-size: 12px;
+}
+
+p {
+    text-align: left;
+}
+
+svg{
+    width:2em;
+    height:2em;
+    vertical-align: middle;
+    margin-right: 2px;
+    margin-left:2px;
+}

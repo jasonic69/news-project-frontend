@@ -1,7 +1,7 @@
 import { getAllArticles } from "../../services/api";
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
-import "./ArticlesContainer.css"
+import "./ArticlesContainer.css";
 
 const ArticlesContainer = () => {
 
@@ -12,8 +12,6 @@ const ArticlesContainer = () => {
         setArticles(data)
         });
       }, []);
-
-      console.log(articles , 'articles')
 
       return (
         <div className="articles-container">
@@ -27,7 +25,6 @@ const ArticlesContainer = () => {
           })}
         </div>
       );
-
 }
 
 export default ArticlesContainer
