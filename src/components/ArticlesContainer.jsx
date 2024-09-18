@@ -1,7 +1,6 @@
 import { getAllArticles } from "../../services/api";
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
-import "./ArticlesContainer.css";
 
 const ArticlesContainer = () => {
 

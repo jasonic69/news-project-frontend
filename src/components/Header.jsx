@@ -3,10 +3,10 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
     return (
         <header>
-            <span><Link to='/'><BsArrowLeftSquare /></Link></span>
-            <span><h1>HEADER</h1></span>
+            <span className='leftArrow'><Link to='/'><BsArrowLeftSquare /></Link></span>
         </header>
     )
 }
