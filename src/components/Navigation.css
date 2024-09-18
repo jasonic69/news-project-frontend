@@ -1,0 +1,36 @@
+.nav-full-container {
+  background-color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 0;
+    left:0;
+    width: 100%;
+    padding-top:10px;
+    border-top: 2px ridge rgba(150, 150, 150, 0.2);
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .btn {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: black;
+    padding: 2px 12px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .btn svg{
+    width:24px;
+    height:24px;
+  }
+  
+  .button-cont {
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 9px;
+  }
+
+  .button-cont p{
+    text-align: center;
+  }
+  
