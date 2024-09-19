@@ -5,8 +5,14 @@ import { getUser } from "../../services/api";
 import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 
+import { useContext } from "react";
+import { UserContext } from "../contexts/UserContext";
+
 
 const ArticleCommentsCard = ({comment}) =>{
+
+  const {loggedInUser, setLoggedInUser} = useContext(UserContext)
+  //console.log(loggedInUser)
 
     const [comment_user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
@@ -46,6 +52,8 @@ const ArticleCommentsCard = ({comment}) =>{
       )
     }
 
+  
+
     return (
     <div className="comments-card">
       <div className="comments-header">
@@ -54,7 +62,7 @@ const ArticleCommentsCard = ({comment}) =>{
       </div>
       <p className="comment-body">{comment.body}</p>
       <div className="comment-stats">
-        <BsArrowUpCircle/>
+        <BsArrowUpCircle />
         <span>{comment.votes}</span>
         <BsArrowDownCircle/>
       </div>
