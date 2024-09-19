@@ -1,0 +1,56 @@
+.comments-card{
+    padding: 0px 12px 0px 12px;
+    margin-bottom: 30px;
+}
+
+.comments-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items:center;
+    padding: 5px 0px 5px 0px;
+   
+}
+
+.comments-profile-img{
+width: 20px; height: 20px; border-radius: 50%; border: 1px solid;
+margin-right:5px;
+}
+
+.comment-author{
+    font-size: 11px;
+    font-weight:600;
+}
+
+.comment-created-at{
+    font-size: 11px;
+    margin-left:10px;
+}
+
+.comment-body{
+    font-size: 13px;
+    font-weight:400;
+}
+
+.comment-stats{
+    display:flex;
+    flex-direction: row;
+    justify-content: right;
+    padding-bottom:5px;
+    width: 100%;
+}
+
+.comment-stats span {
+    min-width: 30px;
+    border-radius: 15px;
+    font-size: 11px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.comment-stats svg{
+    width:1.2em;
+    height:1.2em;
+    vertical-align: middle;
+}
