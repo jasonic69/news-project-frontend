@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { getArticle,getUser } from "../../services/api";
+import { useEffect, useState, useRef } from "react";
+import { getArticle,getUser,patchArticleVote } from "../../services/api";
 import { useParams, Navigate } from "react-router-dom";
 import { BsChat } from "react-icons/bs";
 import { BsArrowUpCircle } from "react-icons/bs";
@@ -14,6 +14,7 @@ const SingleArticle = () => {
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
+    const [voteError, setVoteError] = useState(false);
 
     useEffect(() => {
         setIsLoading(true);
@@ -61,6 +62,37 @@ const SingleArticle = () => {
         />
     </div>;
 
+    const handlerArticleVoteUp = () => {
+        setVoteError(false)
+        setArticle(article => ({
+            ...article,
+            votes: article.votes + 1
+        })) 
+        patchArticleVote(article.article_id, 1).catch((err) => {
+            setArticle(article => ({
+                ...article,
+                votes: article.votes - 1
+            }))
+            setVoteError(true)
+        })
+    }
+
+
+    const handlerArticleVoteDown = () => {
+        setVoteError(false)
+        setArticle(article => ({
+            ...article,
+            votes: article.votes - 1
+        }))
+        patchArticleVote(article.article_id, -1).catch((err) => {
+            setArticle(article => ({
+                ...article,
+                votes: article.votes + 1
+            }))
+            setVoteError(true)
+        })
+    }
+
     return (
         <article>
             <div className="article-card">
@@ -73,7 +105,7 @@ const SingleArticle = () => {
                     <img src={article.article_img_url}/>
                 <p>{article.body}</p>
                 <div className="article-stats">
-                    <span><BsArrowUpCircle /><span>{article.votes}</span><BsArrowDownCircle /></span>
+                    <span id='article-votes' style={{ background: voteError === true ? "#ff4b7eed" : "rgb(235, 229, 229)" }}><BsArrowUpCircle onClick={handlerArticleVoteUp}/><span>{article.votes}</span><BsArrowDownCircle onClick={handlerArticleVoteDown}/></span>
                     <span><BsChat /><span>{article.comment_count}</span></span>
                     <span><span className='article-topic' >{article.topic}</span></span>
                 </div>

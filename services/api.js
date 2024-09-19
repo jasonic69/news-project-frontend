@@ -27,3 +27,7 @@ export function getUser(user_id) {
     return data.user;
   });
 }
+
+export function patchArticleVote(article_id,vote) {
+    return myapi.patch(`/articles/${article_id}`,{ inc_votes : vote})
+}
