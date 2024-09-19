@@ -15,3 +15,15 @@ export function getArticle(article_id) {
     return data.article;
   });
 }
+
+export function getComments(article_id) {
+  return myapi.get(`/articles/${article_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+}
+
+export function getUser(user_id) {
+  return myapi.get(`/users/${user_id}`).then(({ data }) => {
+    return data.user;
+  });
+}
