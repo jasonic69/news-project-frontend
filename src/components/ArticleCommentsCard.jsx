@@ -12,7 +12,6 @@ import { UserContext } from "../contexts/UserContext";
 const ArticleCommentsCard = ({comment}) =>{
 
   const {loggedInUser, setLoggedInUser} = useContext(UserContext)
-  //console.log(loggedInUser)
 
     const [comment_user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);

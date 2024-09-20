@@ -4,11 +4,13 @@ export const UserContext = createContext();
 
 export const UserProvider = ({children}) => {
     
-    const [loggedInUser, setLoggedInUser] = useState({username: 'tickle122', id: 5});
+    const [loggedInUser, setLoggedInUser] = useState({username: 'tickle122', 
+        avatar_url:'https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953'
+    });
 
 
     return (
-        <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+        <UserContext.Provider value={{loggedInUser, setLoggedInUser}}>
             {children}
         </UserContext.Provider>
     );

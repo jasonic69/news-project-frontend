@@ -110,7 +110,7 @@ const SingleArticle = () => {
                     <span><span className='article-topic' >{article.topic}</span></span>
                 </div>
             </div>
-            <ArticleCommentsContainer article={article.article_id}/>
+            <ArticleCommentsContainer article={article.article_id} setArticle={setArticle}/>
         </article>
     )
 }
