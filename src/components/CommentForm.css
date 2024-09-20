@@ -1,0 +1,57 @@
+#comment-form{
+    background-color: white;
+    margin-bottom:20px;
+    text-align: center;
+}
+
+.center-img{
+    text-align: center;
+}
+
+.right-img{
+    text-align: right;
+}
+
+#comment-form textarea{
+    border: none;
+    border-bottom: 2px solid rgb(255, 189, 66);
+    font-size: 16px;
+    resize: none;
+    width:100%;
+}
+
+#comment-form textarea:focus {
+    outline: none;
+    border-bottom: 4px solid rgb(255, 189, 66);
+}
+
+#comment-form button{
+    height:30px;
+    width:100px;
+    margin:2px;
+}
+
+#comment-form p{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+#comment-form-container img{
+    height:40px;
+    width:40px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.rotate-img{
+    animation: rotation 6s infinite linear;
+}
+  
+@keyframes rotation {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}

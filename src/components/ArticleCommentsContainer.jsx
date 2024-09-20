@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { TailSpin } from "react-loader-spinner";
 import ArticleCommentsCard from "./ArticleCommentsCard";
 import "./ArticleCommentsContainer.css";
+import { CommentForm } from "./CommentForm";
 
-const ArticleComments = () => {
+const ArticleComments = ({artical_id, setArticle}) => {
     const { id } = useParams();
 
     const [comments, setComments] = useState([]);
@@ -55,9 +56,10 @@ const ArticleComments = () => {
     
     return (
         <div className="article-comments-container">
-          {comments.map((comment) => {
+          <CommentForm  article_id={id} comments={comments} setComments={setComments} setArticle={setArticle}/>
+          {comments.map((comment,key) => {
             return (
-            <ArticleCommentsCard key={comment.comment_id} comment={comment}/>
+            <ArticleCommentsCard key={"test"+comment.comment_id+key} comment={comment}/>
             );
           })}
         </div>

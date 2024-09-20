@@ -31,3 +31,7 @@ export function getUser(user_id) {
 export function patchArticleVote(article_id,vote) {
     return myapi.patch(`/articles/${article_id}`,{ inc_votes : vote})
 }
+
+export function postArticleComment(article_id, commentObj) {
+    return myapi.post(`/articles/${article_id}/comments`,{username: commentObj.author, body: commentObj.body})
+}
